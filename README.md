@@ -25,3 +25,4 @@
 
 - Just fork and clone
 - Make sure the directories in generate keys are correct (If you don't want to change them you can just copy the folder to `C:\Program Files`)
+- Make sure the python path in generate keys shows the correct location for your python.exe
