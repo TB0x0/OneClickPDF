@@ -1,7 +1,7 @@
 # OneClickPDF
 ## Windows context menu tool for converting pdf to jpg and back
 
-https://img.shields.io/badge/Version-1.0-green
+![image](https://img.shields.io/badge/Version-1.0-green)
 
 - [x] Implement PDF to JPG conversion
 - [x] Registry key generator for context menu
