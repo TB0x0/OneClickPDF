@@ -6,7 +6,7 @@
 - [x] Implement PDF to JPG conversion
 - [x] Registry key generator for context menu
 - [ ] Create windows installation package
-- [ ] Implement JPG to PDF conversion
+- [x] Implement JPG to PDF conversion
 
 
 ## Installation and Testing
