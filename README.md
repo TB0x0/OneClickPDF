@@ -6,7 +6,7 @@
 - [x] Implement PDF to JPG conversion
 - [x] Registry key generator for context menu
 - [x] Implement JPG to PDF conversion
-- [ ] Add key/file deletion script (For uninstallation)
+- [x] Add key/file deletion script (For uninstallation)
 - [ ] Create windows installation package
 
 
