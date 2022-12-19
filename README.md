@@ -1,14 +1,17 @@
 # OneClickPDF
 ## Windows context menu tool for converting pdf to jpg and back
 
-![image](https://img.shields.io/badge/Version-1.1-green)
+![image](https://img.shields.io/badge/Version-0.2-yellow)
 
 - [x] Implement PDF to JPG conversion
 - [x] Registry key generator for context menu
 - [x] Implement JPG to PDF conversion
+#### v0.2 
 - [x] Add key/file deletion script (For uninstallation)
-- [ ] Create windows installation package
-
+- [x] Create windows installation package
+#### v0.3
+- [ ] Remove python directory dependencies
+- [ ] Convert .py to .exe for ease of use
 
 
 ## Installation and Testing
