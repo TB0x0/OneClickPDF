@@ -15,7 +15,7 @@ Name "${NAME}"
 OutFile "Install ${NAME}.exe"
 Unicode True
 RequestExecutionLevel Admin ; Request admin rights on WinVista+ (when UAC is turned on)
-InstallDir "$ProgramFiles\$(^Name)"
+InstallDir "C:\Program Files\$(^Name)"
 InstallDirRegKey HKLM "${REGPATH_UNINSTSUBKEY}" "UninstallString"
 
 !include LogicLib.nsh
@@ -54,6 +54,14 @@ Section "Program files (Required)"
   SectionIn Ro
 
   SetOutPath $InstDir
+  File converterApp.py
+  File GenerateKeys.py
+  File RemoveKeys.py
+  File requirements.txt
+  File LICENSE
+  File OCIcon.ico
+  File /r "poppler-22.04.0"
+
   WriteUninstaller "$InstDir\Uninst.exe"
   WriteRegStr HKLM "${REGPATH_UNINSTSUBKEY}" "DisplayName" "${NAME}"
   WriteRegStr HKLM "${REGPATH_UNINSTSUBKEY}" "DisplayIcon" "$InstDir\MyApp.exe,0"
@@ -61,14 +69,10 @@ Section "Program files (Required)"
   WriteRegStr HKLM "${REGPATH_UNINSTSUBKEY}" "QuietUninstallString" '"$InstDir\Uninst.exe" /S'
   WriteRegDWORD HKLM "${REGPATH_UNINSTSUBKEY}" "NoModify" 1
   WriteRegDWORD HKLM "${REGPATH_UNINSTSUBKEY}" "NoRepair" 1
-  WriteRegStr HKCR "*\shell\oneclickPDF" "DisplayName" "&oneclickPDF"
-  WriteRegStr HKCR "*\shell\oneclickPDF" "Icon" "C:\Program Files'oneclickPDF\OCIcon.ico"
-  WriteRegStr HKCR "*\shell\oneclickPDF\command" "DisplayName" "cmd" ""C:\Python310\python.exe" "C:\Program Files\oneclickPDF\converterApp.py" "%1""
+  WriteRegStr HKCR "*\shell\oneclickPDF" "" "&oneclickPDF"
+  WriteRegStr HKCR "*\shell\oneclickPDF" "Icon" "C:\Program Files\oneclickPDF\OCIcon.ico"
+  WriteRegStr HKCR "*\shell\oneclickPDF\command" "" '"C:\Python310\python.exe" "C:\Program Files\oneclickPDF\converterApp.py" "%1"'
 
-  !tempfile APP
-  !makensis '-v2 "-DOUTFILE=${APP}" "-DNAME=NSISSharedAppExample" -DCOMPANY=Nullsoft "AppGen.nsi"' = 0
-  File "/oname=$InstDir\MyApp.exe" "${APP}" ; Pretend that we have a real application to install
-  !delfile "${APP}"
 SectionEnd
 
 Section "Start Menu shortcut"

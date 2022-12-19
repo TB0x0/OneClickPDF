@@ -41,7 +41,7 @@ if __name__=="__main__":
     try:
         os.mkdir(CURRENT_USER_PATH)
     except OSError as error:
-        print(error)
+        print(error, "\n-_-_- The directory probably exists already -_-_-\n")
         
     getextension = os.path.splitext(sys.argv[1])
     fileextension = getextension[1]
